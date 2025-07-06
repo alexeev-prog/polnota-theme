@@ -1,13 +1,15 @@
-# polnota [![Try it](https://img.shields.io/badge/try%20it-online-blue)](https://vscode.dev/editor/theme/sobolevn.polnota)
+# polnota [![Try it](https://img.shields.io/badge/try%20it-online-blue)](https://vscode.dev/editor/theme/alexeev-prog.polnota)
 
-This is fork of [polnota](https://github.com/alexeev-prog/polnota).
+This theme is fork of [pustota](https://github.com/pustota-thene/pustota).
 
 ## Variants
+We have threaa variants
 
 ### Middle
-![alt text](https://raw.githubusercontent.com/alexeev-prog/polnota/master/assets/middle-bg.png)
+![alt text](https://raw.githubusercontent.com/alexeev-prog/polnota-theme/refs/heads/master/assets/middle-bg.png)
 
 ### Soft
-![alt text](https://raw.githubusercontent.com/alexeev-prog/polnota/master/assets/soft-bg.png)
+![alt text](https://raw.githubusercontent.com/alexeev-prog/polnota-theme/refs/heads/master/assets/soft-bg.png)
 
-[![polnota](https://raw.githubusercontent.com/alexeev-prog/polnota/master/assets/minimal.png)](https://github.com/alexeev-prog/polnota/blob/master/ABOUT.md)
+### Default
+[![polnota](https://raw.githubusercontent.com/alexeev-prog/polnota-theme/refs/heads/master/assets/minimal.png)](https://github.com/alexeev-prog/polnota/blob/master/ABOUT.md)
