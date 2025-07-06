@@ -1,8 +1,8 @@
 {
-  "name": "pustota",
-  "displayName": "pustota",
-  "description": "Minimalistic VSCode theme inspired by old-fashioned hobbies",
-  "version": "0.0.26",
+  "name": "polnota",
+  "displayName": "polnota",
+  "description": "Minimalistic VSCode theme inspired by modern-fashioned hobbies",
+  "version": "0.1.0",
   "scripts": {
     "package": "vsce package",
     "start": "npm run package",
@@ -17,32 +17,32 @@
   "contributes": {
     "themes": [
       {
-        "label": "pustota",
+        "label": "polnota",
         "uiTheme": "vs-dark",
-        "path": "./themes/pustota-color-theme.json"
+        "path": "./themes/polnota-color-theme.json"
       },
       {
-        "label": "pustota middle",
+        "label": "polnota middle",
         "uiTheme": "vs-dark",
-        "path": "./themes/pustota-middle-color-theme.json"
+        "path": "./themes/polnota-middle-color-theme.json"
       },
       {
-        "label": "pustota soft",
+        "label": "polnota soft",
         "uiTheme": "vs-dark",
-        "path": "./themes/pustota-soft-color-theme.json"
+        "path": "./themes/polnota-soft-color-theme.json"
       }
     ]
   },
-  "publisher": "sobolevn",
-  "homepage": "https://github.com/pustota-theme/pustota",
+  "publisher": "alexeevdev",
+  "homepage": "https://github.com/alexeev-prog/polnota-theme",
   "icon": "assets/icon.png",
   "repository": {
     "type": "git",
-    "url": "https://github.com/pustota-theme/pustota.git"
+    "url": "https://github.com/alexeev-prog/polnota-theme"
   },
   "bugs": {
-    "url": "https://github.com/pustota-theme/pustota/issues",
-    "email": "mail@sobolevn.me"
+    "url": "https://github.com/alexeev-prog/polnota-theme/issues",
+    "email": "alexeev.dev@mail.ru"
   },
   "devDependencies": {
     "@vscode/vsce": "^3.0.0"

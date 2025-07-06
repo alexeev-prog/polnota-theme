@@ -1,8 +1,8 @@
-# pustota
+# polnota
 
-[pustota](https://ru.wikipedia.org/wiki/%D0%9F%D1%83%D1%81%D1%82%D0%BE%D1%82%D0%B0) is a minimalistic VSCode theme inspired by old-fashioned hobbies.
+[polnota](https://ru.wikipedia.org/wiki/%D0%9F%D1%83%D1%81%D1%82%D0%BE%D1%82%D0%B0) is a minimalistic VSCode theme inspired by modern-fashioned hobbies.
 
-[Preview it online](https://vscode.dev/editor/theme/sobolevn.pustota) on `vscode.dev` with default settings.
+[Preview it online](https://vscode.dev/editor/theme/sobolevn.polnota) on `vscode.dev` with default settings.
 
 ## Core features
 
@@ -34,15 +34,15 @@ You can also check my [`.dotfiles`](https://github.com/sobolevn/dotfiles) with t
 
 ## Installation
 
-[Install it from the official website](https://marketplace.visualstudio.com/items?itemName=sobolevn.pustota) or install it with CLI: `code --install-extension sobolevn.pustota`
+[Install it from the official website](https://marketplace.visualstudio.com/items?itemName=sobolevn.polnota) or install it with CLI: `code --install-extension sobolevn.polnota`
 
-VSCodium and OpenVSX [are also supported](https://open-vsx.org/extension/sobolevn/pustota).
+VSCodium and OpenVSX [are also supported](https://open-vsx.org/extension/sobolevn/polnota).
 
-And then choose `Preferences: Color Theme` to be `"pustota"`.
+And then choose `Preferences: Color Theme` to be `"polnota"`.
 
 ## Supported languages
 
-This theme [supports a lot of languages](https://github.com/pustota-theme/pustota/tree/master/test), starting from mainstream ones
+This theme [supports a lot of languages](https://github.com/polnota-theme/polnota/tree/master/test), starting from mainstream ones
 like Python, TypeScript, and Java.
 And ending with languages like Elixir, Lisp, and Haskell.
 
@@ -51,21 +51,21 @@ It is quite easy to do, since there are only 5 major colors :)
 
 ## Ports
 
-- Neovim port is available at [pustota.nvim](https://github.com/igor-gorohovsky/pustota.nvim).
+- Neovim port is available at [polnota.nvim](https://github.com/igor-gorohovsky/polnota.nvim).
 
 ## Showcase
 
 Theme with [my VSCode settings](https://github.com/sobolevn/dotfiles/tree/master/vscode):
 
-![minimal](https://raw.githubusercontent.com/pustota-theme/pustota/master/assets/minimal.png)
+![minimal](https://raw.githubusercontent.com/polnota-theme/polnota/master/assets/minimal.png)
 
-![main](https://raw.githubusercontent.com/pustota-theme/pustota/master/assets/main.png)
+![main](https://raw.githubusercontent.com/polnota-theme/polnota/master/assets/main.png)
 
 Theme with default VSCode settings:
 
-![default](https://raw.githubusercontent.com/pustota-theme/pustota/master/assets/default.png)
+![default](https://raw.githubusercontent.com/polnota-theme/polnota/master/assets/default.png)
 
-![default-terminal](https://raw.githubusercontent.com/pustota-theme/pustota/master/assets/default-terminal.png)
+![default-terminal](https://raw.githubusercontent.com/polnota-theme/polnota/master/assets/default-terminal.png)
 
 ## Recommended settings
 
