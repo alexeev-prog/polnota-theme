@@ -2,7 +2,7 @@
   "name": "polnota",
   "displayName": "polnota",
   "description": "Minimalistic VSCode theme inspired by modern-fashioned hobbies",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "scripts": {
     "package": "vsce package",
     "start": "npm run package",
@@ -30,6 +30,11 @@
         "label": "polnota soft",
         "uiTheme": "vs-dark",
         "path": "./themes/polnota-soft-color-theme.json"
+      },
+      {
+        "label": "polnota light",
+        "uiTheme": "vs-light",
+        "path": "./themes/polnota-light-color-theme.json"
       }
     ]
   },
