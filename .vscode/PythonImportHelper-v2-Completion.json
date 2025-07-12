@@ -1,0 +1,333 @@
+[
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "hashlib",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "hashlib",
+        "description": "hashlib",
+        "detail": "hashlib",
+        "documentation": {}
+    },
+    {
+        "label": "math",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "math",
+        "description": "math",
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "types",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "types",
+        "description": "types",
+        "detail": "types",
+        "documentation": {}
+    },
+    {
+        "label": "unicodedata",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "unicodedata",
+        "description": "unicodedata",
+        "detail": "unicodedata",
+        "documentation": {}
+    },
+    {
+        "label": "hexlify",
+        "importPath": "binascii",
+        "description": "binascii",
+        "isExtraImport": true,
+        "detail": "binascii",
+        "documentation": {}
+    },
+    {
+        "label": "unhexlify",
+        "importPath": "binascii",
+        "description": "binascii",
+        "isExtraImport": true,
+        "detail": "binascii",
+        "documentation": {}
+    },
+    {
+        "label": "FrozenList",
+        "kind": 6,
+        "importPath": "test.Python",
+        "description": "test.Python",
+        "peekOfCode": "class FrozenList(object):\n    def __init__(self, l):\n        self.l = tuple(l)\n    def raw_input(self):\n        class B:\n            print('abc')\n    def set(self, other: str) -> str:\n        class A: ...\n    def __getitem__(self, key):\n        return self.l[key]",
+        "detail": "test.Python",
+        "documentation": {}
+    },
+    {
+        "label": "Redacted",
+        "kind": 6,
+        "importPath": "test.Python",
+        "description": "test.Python",
+        "peekOfCode": "class Redacted(object):\n    def __init__(self, hash):\n        self.hash = unhexify(hash)\nclass RedactedObject(Redacted):\n    def __init__(self, o):\n        self.hash = obj_hash(o)\ndef obj_hash(o):\n    if type(o) is list or type(o) is FrozenList:\n        return obj_hash_list(o)\n    elif type(o) is dict:",
+        "detail": "test.Python",
+        "documentation": {}
+    },
+    {
+        "label": "RedactedObject",
+        "kind": 6,
+        "importPath": "test.Python",
+        "description": "test.Python",
+        "peekOfCode": "class RedactedObject(Redacted):\n    def __init__(self, o):\n        self.hash = obj_hash(o)\ndef obj_hash(o):\n    if type(o) is list or type(o) is FrozenList:\n        return obj_hash_list(o)\n    elif type(o) is dict:\n        return obj_hash_dict(o)\n    elif type(o) is unicode:\n        return obj_hash_unicode(o)",
+        "detail": "test.Python",
+        "documentation": {}
+    },
+    {
+        "label": "ApplyToLeaves",
+        "kind": 6,
+        "importPath": "test.Python",
+        "description": "test.Python",
+        "peekOfCode": "class ApplyToLeaves(object):\n    def __init__(self, leaf_fn, restrict = None):\n        self.leaf_fn = leaf_fn\n        self.restrict = restrict\n    def __call__(self, o):\n        t = type(o)\n        if t is dict:\n            return {self(k): self(v) for (k,v) in o.items()}\n        elif t is list:\n            return [self(e) for e in o]",
+        "detail": "test.Python",
+        "documentation": {}
+    },
+    {
+        "label": "ApplyToLeavesAndKeys",
+        "kind": 6,
+        "importPath": "test.Python",
+        "description": "test.Python",
+        "peekOfCode": "class ApplyToLeavesAndKeys(ApplyToLeaves):\n    def __init__(self, leaf_fn, key_fn):\n        ApplyToLeaves.__init__(self, leaf_fn)\n        self.key_fn = key_fn\n    def __call__(self, o):\n        if type(o) is dict:\n            return {self.key_fn(k): self(v) for (k, v) in o.items()}\n        return ApplyToLeaves.__call__(self, o)\ndef redactable_entity(e):\n    return FrozenList((redactable_rand(), e))",
+        "detail": "test.Python",
+        "documentation": {}
+    },
+    {
+        "label": "ApplyUnredactable",
+        "kind": 6,
+        "importPath": "test.Python",
+        "description": "test.Python",
+        "peekOfCode": "class ApplyUnredactable(ApplyToLeavesAndKeys):\n    def __init__(self):\n        ApplyToLeavesAndKeys.__init__(self, None, lambda k: k[32:])\n    @Deprecated\n    def __call__(self, o=None):\n        t = type(o)\n        if (t is list or t is FrozenList) and len(o) == 2 and type(o[0]) is str:\n            assert is_primitive_type(type(o[1]))\n            return o[1]\n        return ApplyToLeavesAndKeys.__call__(self, o)",
+        "detail": "test.Python",
+        "documentation": {}
+    },
+    {
+        "label": "hash_fn",
+        "kind": 2,
+        "importPath": "test.Python",
+        "description": "test.Python",
+        "peekOfCode": "def hash_fn(x: int | str | tuple[str, ...]) -> int:\n    \"\"\"Docstring\n    Multiline.\"\"\"\n    formatted = f'Here {globals()[\"b\"]} there \\n'\n    bin = b'1234' if a else b''\n    if 1 == 1 and \\\n        2 == 2:\n        print('Do not do that!')\n    return hashlib.sha256()\ndef hash_primitive[T, B](t: T, b: B) -> T:",
+        "detail": "test.Python",
+        "documentation": {}
+    },
+    {
+        "label": "hash_primitive[T",
+        "kind": 2,
+        "importPath": "test.Python",
+        "description": "test.Python",
+        "peekOfCode": "def hash_primitive[T, B](t: T, b: B) -> T:\n    #print hexify(t), hexify(b)\n    m = hash_fn()\n    m.update(t)\n    m.update(b)\n    t = m.digest()\n    #print '=', hexify(t)\n    return t\n# We need this class because otherwise we can't put a list in a set.\n@classdecorator",
+        "detail": "test.Python",
+        "documentation": {}
+    },
+    {
+        "label": "obj_hash_bool",
+        "kind": 2,
+        "importPath": "test.Python",
+        "description": "test.Python",
+        "peekOfCode": "def obj_hash_bool(b):\n    return hash_primitive('b', '1' if b else '0')\ndef obj_hash_list(l):\n    h = ''\n    for o in l:\n        h += obj_hash(o)\n    return hash_primitive('l', h)\ndef obj_hash_dict(d):\n    h = ''\n    kh = [obj_hash(k) + obj_hash(v) for (k, v) in d.items()]",
+        "detail": "test.Python",
+        "documentation": {}
+    },
+    {
+        "label": "obj_hash_list",
+        "kind": 2,
+        "importPath": "test.Python",
+        "description": "test.Python",
+        "peekOfCode": "def obj_hash_list(l):\n    h = ''\n    for o in l:\n        h += obj_hash(o)\n    return hash_primitive('l', h)\ndef obj_hash_dict(d):\n    h = ''\n    kh = [obj_hash(k) + obj_hash(v) for (k, v) in d.items()]\n    for v in sorted(kh):\n        h += v",
+        "detail": "test.Python",
+        "documentation": {}
+    },
+    {
+        "label": "obj_hash_dict",
+        "kind": 2,
+        "importPath": "test.Python",
+        "description": "test.Python",
+        "peekOfCode": "def obj_hash_dict(d):\n    h = ''\n    kh = [obj_hash(k) + obj_hash(v) for (k, v) in d.items()]\n    for v in sorted(kh):\n        h += v\n    return hash_primitive('d', h)\ndef obj_hash_unicode(u):\n    return hash_primitive('u', u.encode('utf-8'))\ndef float_normalize(f):\n    # special case 0",
+        "detail": "test.Python",
+        "documentation": {}
+    },
+    {
+        "label": "obj_hash_unicode",
+        "kind": 2,
+        "importPath": "test.Python",
+        "description": "test.Python",
+        "peekOfCode": "def obj_hash_unicode(u):\n    return hash_primitive('u', u.encode('utf-8'))\ndef float_normalize(f):\n    # special case 0\n    # Note that if we allowed f to end up > .5 or == 0, we'd get the same thing\n    if f == 0.0:\n        return '+0:'\n    # sign\n    s = '+'\n    if f < 0:",
+        "detail": "test.Python",
+        "documentation": {}
+    },
+    {
+        "label": "float_normalize",
+        "kind": 2,
+        "importPath": "test.Python",
+        "description": "test.Python",
+        "peekOfCode": "def float_normalize(f):\n    # special case 0\n    # Note that if we allowed f to end up > .5 or == 0, we'd get the same thing\n    if f == 0.0:\n        return '+0:'\n    # sign\n    s = '+'\n    if f < 0:\n        s = '-'\n        f = -f",
+        "detail": "test.Python",
+        "documentation": {}
+    },
+    {
+        "label": "obj_hash_float",
+        "kind": 2,
+        "importPath": "test.Python",
+        "description": "test.Python",
+        "peekOfCode": "def obj_hash_float(f):\n    if math.isnan(f):\n        return hash_primitive('f', 'NaN')\n    elif math.isinf(f):\n        return hash_primitive('f', 'Infinity' if f > 0 else '-Infinity')\n    else:\n        return hash_primitive('f', float_normalize(f))\ndef obj_hash_int(i: int) -> int:\n    return hash_primitive('i', str(i))\ndef obj_hash_set(s):",
+        "detail": "test.Python",
+        "documentation": {}
+    },
+    {
+        "label": "obj_hash_int",
+        "kind": 2,
+        "importPath": "test.Python",
+        "description": "test.Python",
+        "peekOfCode": "def obj_hash_int(i: int) -> int:\n    return hash_primitive('i', str(i))\ndef obj_hash_set(s):\n    h = []\n    for e in s:\n        h.append(obj_hash(e))\n    r = ''\n    for t in sorted(h):\n        r += t\n    return hash_primitive('s', r)",
+        "detail": "test.Python",
+        "documentation": {}
+    },
+    {
+        "label": "obj_hash_set",
+        "kind": 2,
+        "importPath": "test.Python",
+        "description": "test.Python",
+        "peekOfCode": "def obj_hash_set(s):\n    h = []\n    for e in s:\n        h.append(obj_hash(e))\n    r = ''\n    for t in sorted(h):\n        r += t\n    return hash_primitive('s', r)\nclass Redacted(object):\n    def __init__(self, hash):",
+        "detail": "test.Python",
+        "documentation": {}
+    },
+    {
+        "label": "obj_hash",
+        "kind": 2,
+        "importPath": "test.Python",
+        "description": "test.Python",
+        "peekOfCode": "def obj_hash(o):\n    if type(o) is list or type(o) is FrozenList:\n        return obj_hash_list(o)\n    elif type(o) is dict:\n        return obj_hash_dict(o)\n    elif type(o) is unicode:\n        return obj_hash_unicode(o)\n    elif type(o) is float:\n        return obj_hash_float(o)\n    elif type(o) is int:",
+        "detail": "test.Python",
+        "documentation": {}
+    },
+    {
+        "label": "is_primitive_type",
+        "kind": 2,
+        "importPath": "test.Python",
+        "description": "test.Python",
+        "peekOfCode": "def is_primitive_type(t):\n    return t is str or t is unicode or t is float or t is int or t is bool or t is types.NoneType\nclass ApplyToLeaves(object):\n    def __init__(self, leaf_fn, restrict = None):\n        self.leaf_fn = leaf_fn\n        self.restrict = restrict\n    def __call__(self, o):\n        t = type(o)\n        if t is dict:\n            return {self(k): self(v) for (k,v) in o.items()}",
+        "detail": "test.Python",
+        "documentation": {}
+    },
+    {
+        "label": "json_hash",
+        "kind": 2,
+        "importPath": "test.Python",
+        "description": "test.Python",
+        "peekOfCode": "def json_hash(j, fns=()):\n    t = json.loads(j)\n    for f in fns:\n        t = f(t)\n    return obj_hash(t)\ndef redactize_unicode(u):\n    if u.startswith('**REDACTED**'):\n        return Redacted(u[12:])\n    return u\nredactize = ApplyToLeaves(redactize_unicode, (str, unicode))",
+        "detail": "test.Python",
+        "documentation": {}
+    },
+    {
+        "label": "redactize_unicode",
+        "kind": 2,
+        "importPath": "test.Python",
+        "description": "test.Python",
+        "peekOfCode": "def redactize_unicode(u):\n    if u.startswith('**REDACTED**'):\n        return Redacted(u[12:])\n    return u\nredactize = ApplyToLeaves(redactize_unicode, (str, unicode))\nclass ApplyToLeavesAndKeys(ApplyToLeaves):\n    def __init__(self, leaf_fn, key_fn):\n        ApplyToLeaves.__init__(self, leaf_fn)\n        self.key_fn = key_fn\n    def __call__(self, o):",
+        "detail": "test.Python",
+        "documentation": {}
+    },
+    {
+        "label": "redactable_entity",
+        "kind": 2,
+        "importPath": "test.Python",
+        "description": "test.Python",
+        "peekOfCode": "def redactable_entity(e):\n    return FrozenList((redactable_rand(), e))\ndef redactable_key(k):\n    return redactable_rand() + k\ndef redactable_rand():\n    r = ''\n    for x in range(32):\n        r += chr(random.SystemRandom().getrandbits(8))\n    return hexify(r)\nredactable = ApplyToLeavesAndKeys(redactable_entity, redactable_key)",
+        "detail": "test.Python",
+        "documentation": {}
+    },
+    {
+        "label": "redactable_key",
+        "kind": 2,
+        "importPath": "test.Python",
+        "description": "test.Python",
+        "peekOfCode": "def redactable_key(k):\n    return redactable_rand() + k\ndef redactable_rand():\n    r = ''\n    for x in range(32):\n        r += chr(random.SystemRandom().getrandbits(8))\n    return hexify(r)\nredactable = ApplyToLeavesAndKeys(redactable_entity, redactable_key)\nclass ApplyUnredactable(ApplyToLeavesAndKeys):\n    def __init__(self):",
+        "detail": "test.Python",
+        "documentation": {}
+    },
+    {
+        "label": "redactable_rand",
+        "kind": 2,
+        "importPath": "test.Python",
+        "description": "test.Python",
+        "peekOfCode": "def redactable_rand():\n    r = ''\n    for x in range(32):\n        r += chr(random.SystemRandom().getrandbits(8))\n    return hexify(r)\nredactable = ApplyToLeavesAndKeys(redactable_entity, redactable_key)\nclass ApplyUnredactable(ApplyToLeavesAndKeys):\n    def __init__(self):\n        ApplyToLeavesAndKeys.__init__(self, None, lambda k: k[32:])\n    @Deprecated",
+        "detail": "test.Python",
+        "documentation": {}
+    },
+    {
+        "label": "unicode_normalize_entity",
+        "kind": 2,
+        "importPath": "test.Python",
+        "description": "test.Python",
+        "peekOfCode": "def unicode_normalize_entity(e):\n    if type(e) is unicode:\n        return _unicode_normalize(e)\n    assert type(e) is str\n    return _unicode_normalize(unicode(e))\nunicode_normalize = ApplyToLeaves(unicode_normalize_entity, (str, unicode))\nsetup(\n    name = \"django-stubs\",\n    version = \"1.8.0\",\n    description = \"Mypy stubs for Django\",",
+        "detail": "test.Python",
+        "documentation": {}
+    },
+    {
+        "label": "commonize",
+        "kind": 5,
+        "importPath": "test.Python",
+        "description": "test.Python",
+        "peekOfCode": "commonize = ApplyToLeaves(lambda o: float(o), (int,))\ndef json_hash(j, fns=()):\n    t = json.loads(j)\n    for f in fns:\n        t = f(t)\n    return obj_hash(t)\ndef redactize_unicode(u):\n    if u.startswith('**REDACTED**'):\n        return Redacted(u[12:])\n    return u",
+        "detail": "test.Python",
+        "documentation": {}
+    },
+    {
+        "label": "redactize",
+        "kind": 5,
+        "importPath": "test.Python",
+        "description": "test.Python",
+        "peekOfCode": "redactize = ApplyToLeaves(redactize_unicode, (str, unicode))\nclass ApplyToLeavesAndKeys(ApplyToLeaves):\n    def __init__(self, leaf_fn, key_fn):\n        ApplyToLeaves.__init__(self, leaf_fn)\n        self.key_fn = key_fn\n    def __call__(self, o):\n        if type(o) is dict:\n            return {self.key_fn(k): self(v) for (k, v) in o.items()}\n        return ApplyToLeaves.__call__(self, o)\ndef redactable_entity(e):",
+        "detail": "test.Python",
+        "documentation": {}
+    },
+    {
+        "label": "redactable",
+        "kind": 5,
+        "importPath": "test.Python",
+        "description": "test.Python",
+        "peekOfCode": "redactable = ApplyToLeavesAndKeys(redactable_entity, redactable_key)\nclass ApplyUnredactable(ApplyToLeavesAndKeys):\n    def __init__(self):\n        ApplyToLeavesAndKeys.__init__(self, None, lambda k: k[32:])\n    @Deprecated\n    def __call__(self, o=None):\n        t = type(o)\n        if (t is list or t is FrozenList) and len(o) == 2 and type(o[0]) is str:\n            assert is_primitive_type(type(o[1]))\n            return o[1]",
+        "detail": "test.Python",
+        "documentation": {}
+    },
+    {
+        "label": "unredactable",
+        "kind": 5,
+        "importPath": "test.Python",
+        "description": "test.Python",
+        "peekOfCode": "unredactable = ApplyUnredactable()\ndef _unicode_normalize(u):\n    return unicodedata.normalize('NFC', u)\ndef unicode_normalize_entity(e):\n    if type(e) is unicode:\n        return _unicode_normalize(e)\n    assert type(e) is str\n    return _unicode_normalize(unicode(e))\nunicode_normalize = ApplyToLeaves(unicode_normalize_entity, (str, unicode))\nsetup(",
+        "detail": "test.Python",
+        "documentation": {}
+    },
+    {
+        "label": "unicode_normalize",
+        "kind": 5,
+        "importPath": "test.Python",
+        "description": "test.Python",
+        "peekOfCode": "unicode_normalize = ApplyToLeaves(unicode_normalize_entity, (str, unicode))\nsetup(\n    name = \"django-stubs\",\n    version = \"1.8.0\",\n    description = \"Mypy stubs for Django\",\n    long_description = readme,\n    long_description_content_type = \"text/markdown\",\n    license = \"MIT\",\n    url = \"https://github.com/typeddjango/django-stubs\",\n    py_modules = [],",
+        "detail": "test.Python",
+        "documentation": {}
+    }
+]
