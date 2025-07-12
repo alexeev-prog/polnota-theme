@@ -33,8 +33,18 @@
       },
       {
         "label": "polnota light",
-        "uiTheme": "vs-light",
+        "uiTheme": "vs",
         "path": "./themes/polnota-light-color-theme.json"
+      },
+      {
+        "label": "polnota gray middle",
+        "uiTheme": "vs-dark",
+        "path": "./themes/polnota-gray-middle-color-theme.json"
+      },
+      {
+        "label": "polnota gray soft",
+        "uiTheme": "vs-dark",
+        "path": "./themes/polnota-gray-soft-color-theme.json"
       }
     ]
   },
