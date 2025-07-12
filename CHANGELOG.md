@@ -1,3 +1,21 @@
+commit 2bce335d9bc616c4924ea4c3c5a4d8b74eba948f
+Author: Alexeev Bronislav <alexeev.dev@mail.ru>
+Date:   Sat Jul 12 18:30:35 2025 +0700
+
+    update readme
+
+commit eb2487e4958489386638e1d923650efaaa585f69
+Author: Alexeev Bronislav <alexeev.dev@mail.ru>
+Date:   Sat Jul 12 18:28:40 2025 +0700
+
+    add gray soft and middle theme
+
+commit 83c0cbd3c84892b25ad14dbe5294f3fa9298eacd
+Author: Alexeev Bronislav <alexeev.dev@mail.ru>
+Date:   Mon Jul 7 21:19:57 2025 +0700
+
+    add light
+
 commit d923775acb6fae2b553af5890c94fd13306eeed1
 Author: Alexeev Bronislav <alexeev.dev@mail.ru>
 Date:   Sun Jul 6 08:49:59 2025 +0700
