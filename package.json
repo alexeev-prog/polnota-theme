@@ -2,7 +2,7 @@
   "name": "polnota",
   "displayName": "polnota",
   "description": "Minimalistic VSCode theme inspired by modern-fashioned hobbies",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "scripts": {
     "package": "vsce package",
     "start": "npm run package",

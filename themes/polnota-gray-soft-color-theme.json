@@ -4,7 +4,6 @@
   "type": "dark",
 
   "colors": {
-    // Основной фон (мягкий серый)
     "editor.background": "#1F1F1F",
     "activityBar.background": "#1F1F1F",
     "sideBar.background": "#1F1F1F",
@@ -22,7 +21,6 @@
     "minimap.background": "#1F1F1F00",
     "dropdown.background": "#1F1F1F",
 
-    // Вторичные фоны (немного светлее)
     "editor.lineHighlightBackground": "#1A1A1A",
     "editor.selectionBackground": "#303030",
     "editor.inactiveSelectionBackground": "#262626",
@@ -47,7 +45,6 @@
     "button.hoverBackground": "#e1af4b",
     "badge.background": "#e6b45033",
 
-    // Границы и разделители (мягче чем в middle)
     "editorGroup.border": "#151515",
     "editorGroupHeader.tabsBorder": "#151515",
     "sideBar.border": "#151515",
@@ -69,7 +66,6 @@
     "inputValidation.infoBorder": "#59C2FF",
     "inputValidation.warningBorder": "#E6B450",
 
-    // Текст и передний план (без изменений)
     "editor.foreground": "#b3b1ad",
     "editorLineNumber.foreground": "#B3B1AD80",
     "editorLineNumber.activeForeground": "#B3B1ADCC",
@@ -98,19 +94,16 @@
     "quickInput.foreground": "#B3B1ADBF",
     "quickInputList.focusForeground": "#e5b358",
 
-    // Статус бар
     "statusBar.debuggingBackground": "#f29668",
     "statusBar.debuggingForeground": "#0a0e14",
     "statusBar.noFolderBackground": "#1F1F1F",
     "statusBarItem.prominentBackground": "#262626",
     "statusBarItem.prominentHoverBackground": "#26262630",
 
-    // Активности
     "activityBarBadge.background": "#e6b450",
     "activityBarBadge.foreground": "#1F1F1F",
     "activityBar.activeBorder": "#e5b358",
 
-    // Терминал (без изменений)
     "terminal.ansiBlack": "#121212",
     "terminal.ansiBlue": "#53bdfa",
     "terminal.ansiBrightBlack": "#686868",
@@ -129,7 +122,6 @@
     "terminal.ansiYellow": "#f9af4f",
     "terminal.foreground": "#b3b1ad",
 
-    // Прочие элементы
     "focusBorder": "#1F1F1F00",
     "list.focusAndSelectionOutline": "#1F1F1F00",
     "scrollbarSlider.background": "#4d556666",

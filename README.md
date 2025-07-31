@@ -3,7 +3,7 @@
 This theme is fork of [pustota](https://github.com/pustota-thene/pustota).
 
 ## Variants
-We have threaa variants
+We have five variants.
 
 ### Middle
 ![alt text](https://raw.githubusercontent.com/alexeev-prog/polnota-theme/refs/heads/master/assets/middle-bg.png)
